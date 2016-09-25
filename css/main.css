@@ -17,6 +17,10 @@ button {
   font-family: 'Open Sans', sans-serif !important;
 }
 
+#weather {
+  text-transform: capitalize;
+}
+
 .main {
   padding-top: 30px;
 }
