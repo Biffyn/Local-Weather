@@ -1,7 +1,32 @@
 body {
-   background: #2c3e50;
-   background: -webkit-linear-gradient(right, #2c3e50, #3498db);
-   background: -o-linear-gradient(right, #2c3e50, #3498db);
-   background: linear-gradient(to left, #2c3e50, #3498db);
-   height: 100vh;
+    background: #f46b45;
+    background: -webkit-linear-gradient(to left, #f46b45 , #eea849);
+    background: linear-gradient(to left, #f46b45 , #eea849);
+    // background: -webkit-linear-gradient(right, #2c3e50, #3498db);
+    // background: -o-linear-gradient(right, #2c3e50, #3498db);
+    // background: linear-gradient(to left, #2c3e50, #3498db);
+    height: 100vh;
+    color: white;
+    font-size: 1.8em;
+}
+
+i {
+    font-size: 3em;
+    margin: 0.5em auto;
+}
+
+button {
+    font-size: 0.8em !important;
+}
+
+.main{
+    padding-top: 50px;
+}
+
+.center-block {
+    float: none !important;
+}
+
+.weather-content {
+    margin: 0 auto;
 }

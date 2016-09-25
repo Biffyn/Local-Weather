@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Your Weather</title>
 </head>
@@ -13,8 +14,17 @@
     <div class="container-fluid main">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 center-block">
-                    
+                <div class="col-xs-12 center-block weather-content">
+                    <div class="text-center wrapper">
+                        <h1>Your Weather</h1>
+                        <i class="wi wi-day-sunny violet"></i>
+                        <p id="weater">Sunny</p>
+                        <p id="temp">21 <span>&deg;C</span></p>
+                        <p id="location">Osnabrück</p>
+                        <button class="ui green button">&deg;C</button>
+                        <button class="ui inverted button">&deg;F</button>
+                    </div>
+
                 </div>
             </div>
         </div>
