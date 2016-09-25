@@ -1,31 +1,40 @@
+@import 'https://fonts.googleapis.com/css?family=Francois+One|Open+Sans|Pacifico';
 body {
     background: #f46b45;
-    background: -webkit-linear-gradient(to left, #f46b45 , #eea849);
-    background: linear-gradient(to left, #f46b45 , #eea849);
+    // background: #f46b45;
+    // background: -webkit-linear-gradient(to left, #f46b45 , #eea849);
+    // background: linear-gradient(to left, #f46b45 , #eea849);
     // background: -webkit-linear-gradient(right, #2c3e50, #3498db);
     // background: -o-linear-gradient(right, #2c3e50, #3498db);
     // background: linear-gradient(to left, #2c3e50, #3498db);
     height: 100vh;
     color: white;
     font-size: 1.8em;
+    font-family: 'Open Sans', sans-serif;
 }
 
 i {
     font-size: 3em;
-    margin: 0.5em auto;
+    margin: 0.4em auto;
 }
 
 button {
-    font-size: 0.8em !important;
+    font-size: 0.7em !important;
+    font-family: 'Open Sans', sans-serif !important;
 }
 
 .main{
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .center-block {
     float: none !important;
+    h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 1.8em;
+    }
 }
+
 
 .weather-content {
     margin: 0 auto;
