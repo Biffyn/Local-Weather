@@ -1,51 +1,51 @@
 $(document).ready(function() {
     var lon;
     var lat;
-    var apiKey = "f44d93e35972d2dc326a9b9c058f0f6d";        //enter API key here
+    var apiKey = "5924d8f1cb9c28e04a6bfe660e704c11";        //enter API key here
     // get geo-location data
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position) {
             lon = position.coords.longitude;
 		    lat = position.coords.latitude;
-            var apiCall = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon="+ lon + "&units=metric&appid=" + apiKey;
+            var apiCall = "GET"+ " " +"https://api.darksky.net/forecast/" + apiKey + "/" + lat + "," + lon;
             // get local weather - Open Weather JSON
-            rq = $.getJSON(apiCall, function(res){
-                // save what is needed from the response to vars
-                 id = res.weather[0].id;
-                 weather = res.weather[0].description;
-                 city = res.name;
-                 temp = res.main.temp.toFixed(1);
-                 // convert Fahrenheit to Celsius
-                 farh = (temp * 9 / 5 + 32).toFixed(1);
-                 console.log(id);
-                 // display weather
-                 $("#city").html(city);
-                 $("#temp").html(temp + " &deg;" + "C");
-                 $("#weather").html(weather);
-
-                 $("#celsius").click(function(){
+            rq = $.getJSON(apiCall, function(res, err){
+                console.log(res);
+                if (err){
+                    $("#weather").html("Sorry there is a problem with the openweathermap.org server. Please chack back later!!");
+                } else {
+                    // save what is needed from the response to vars
+                     weather = res.currently[0].summary;
+                     city = res.timezone;
+                     temp = rescurrently[0].temperature.toFixed(1);
+                     // convert Fahrenheit to Celsius
+                     farh = (temp * 9 / 5 + 32).toFixed(1);
+                     console.log(id);
+                     // display weather
+                     $("#city").html(city);
                      $("#temp").html(temp + " &deg;" + "C");
-                 });
-                 $("#fahrenheit").click(function(){
-                     $("#temp").html(farh + " &deg;" + "F");
-                 });
+                     $("#weather").html(weather);
 
-                 rq.then(function(res) {
-                     var prefix = 'wi wi-';
-                     var code = res.weather[0].id;
-                     var icon = weatherIcons[code].icon;
-                     // If we are not in the ranges mentioned above, add a day/night prefix.
-                     if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-                         icon = 'day-' + icon;
-                  }
-                  // Finally tack on the prefix.
-                  icon = prefix + icon;
-                  console.log(icon);
+                     $("#celsius").click(function(){
+                         $("#temp").html(temp + " &deg;" + "C");
+                     });
+                     $("#fahrenheit").click(function(){
+                         $("#temp").html(farh + " &deg;" + "F");
+                     });
 
-                   $("#icon").addClass(icon);
-
-
-                });
+                     rq.then(function(res) {
+                         var prefix = 'wi wi-';
+                         var code = res.weather[0].id;
+                         var icon = weatherIcons[code].icon;
+                         // If we are not in the ranges mentioned above, add a day/night prefix.
+                         if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+                             icon = 'day-' + icon;
+                      }
+                      // Finally tack on the prefix.
+                      icon = prefix + icon;
+                       $("#icon").addClass(icon);
+                    });
+                }
             });
         });
     }
