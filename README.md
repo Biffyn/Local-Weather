@@ -15,6 +15,7 @@
  - [ ] Use reverse geocoding to get users current location - currently the app just displays user's country and timezone (in progress)
  - [ ] Add date and time display (in progress)
  - [ ] Three day forcast (in progress)
+ - [ ] Add high low temperature display
  - [ ] Add precipitation display
  - [ ] Add windspeed display
  - [ ] Better UI/UX
